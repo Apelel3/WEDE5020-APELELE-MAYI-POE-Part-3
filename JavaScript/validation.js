@@ -1,153 +1,117 @@
-/**
- * validation.js - Custom Client-Side Form Validation
- *
- * This file is used only on contact.html.
- *
- * It demonstrates:
- * 1. Variables
- * 2. Functions
- * 3. Conditions
- * 4. Regular expressions
- * 5. Events
- * 6. classList
- * 7. Form validation
- */
+// validation.js - Apelele Hair Collection
+document.addEventListener('DOMContentLoaded', () => {
+  // Contact Form Validation
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      let isValid = true;
 
-document.addEventListener("DOMContentLoaded", () => {
+      // First Name validation
+      const fname = document.getElementById('fname');
+      const fnameError = document.getElementById('fnameError');
+      if (fname && fname.value.trim() === '') {
+        showError(fname, fnameError);
+        isValid = false;
+      } else if (fname) {
+        clearError(fname, fnameError);
+      }
 
-  // Find the contact form.
-  const form = document.getElementById("contactForm");
+      // Last Name validation[cite: 2]
+      const lname = document.getElementById('lname');
+      const lnameError = document.getElementById('lnameError');
+      if (lname && lname.value.trim() === '') {
+        showError(lname, lnameError);
+        isValid = false;
+      } else if (lname) {
+        clearError(lname, lnameError);
+      }
 
-  // Stop if this is not the contact page.
-  if (!form) return;
+      // Email validation[cite: 2]
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email && !emailRegex.test(email.value.trim())) {
+        showError(email, emailError);
+        isValid = false;
+      } else if (email) {
+        clearError(email, emailError);
+      }
 
+      // Phone validation[cite: 2]
+      const phone = document.getElementById('phone');
+      const phoneError = document.getElementById('phoneError');
+      if (phone && phone.value.trim() !== '') {
+        const phoneRegex = /^[\d\s\+\-\(\)]{7,15}$/;
+        if (!phoneRegex.test(phone.value.trim())) {
+          showError(phone, phoneError);
+          isValid = false;
+        } else {
+          clearError(phone, phoneError);
+        }
+      } else if (phone && phoneError) {
+        clearError(phone, phoneError);
+      }
 
-  /* ---------- EMAIL PATTERN ---------- */
+      // Message validation[cite: 2]
+      const message = document.getElementById('message');
+      const messageError = document.getElementById('messageError');
+      if (message && message.value.trim() === '') {
+        showError(message, messageError);
+        isValid = false;
+      } else if (message) {
+        clearError(message, messageError);
+      }
 
-  // This pattern checks for a basic structure such as:
-  // student@example.com
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-  /* ---------- FORM SUBMISSION EVENT ---------- */
-
-  form.addEventListener("submit", (event) => {
-
-    // Stop the browser from refreshing/submitting the page.
-    event.preventDefault();
-
-    // Assume the form is valid until an error is found.
-    let isValid = true;
-
-
-    /* ---------- FIND FORM ELEMENTS ---------- */
-
-    const fullName =
-      document.getElementById("fullName");
-
-    const email =
-      document.getElementById("email");
-
-    const service =
-      document.getElementById("serviceSelect");
-
-    const message =
-      document.getElementById("message");
-
-    const formStatus =
-      document.getElementById("formStatus");
-
-
-    /* ---------- RESET OLD ERRORS ---------- */
-
-    formStatus.classList.remove("success");
-
-    resetErrors([
-      fullName,
-      email,
-      service,
-      message
-    ]);
-
-
-    /* ---------- VALIDATE FULL NAME ---------- */
-
-    if (fullName.value.trim().length < 3) {
-      showError(fullName, "nameError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE EMAIL ---------- */
-
-    if (!emailRegex.test(email.value.trim())) {
-      showError(email, "emailError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE SERVICE ---------- */
-
-    if (service.value === "") {
-      showError(service, "serviceError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE MESSAGE ---------- */
-
-    if (message.value.trim().length < 10) {
-      showError(message, "messageError");
-      isValid = false;
-    }
-
-
-    /* ---------- SUCCESS ---------- */
-
-    if (isValid) {
-      formStatus.classList.add("success");
-
-      // Clear all entered values after successful validation.
-      form.reset();
-    }
-  });
-
-
-  /* ========================================================
-     FUNCTION: showError
-     Adds the error class to an input and displays its message.
-     ======================================================== */
-
-  function showError(inputElement, errorSpanId) {
-
-    inputElement.classList.add("error");
-
-    const errorSpan =
-      document.getElementById(errorSpanId);
-
-    if (errorSpan) {
-      errorSpan.classList.add("visible");
-    }
-  }
-
-
-  /* ========================================================
-     FUNCTION: resetErrors
-     Removes all old error styles/messages before validation.
-     ======================================================== */
-
-  function resetErrors(elements) {
-
-    elements.forEach((element) => {
-      element.classList.remove("error");
-    });
-
-    const errorSpans =
-      document.querySelectorAll(".error-message");
-
-    errorSpans.forEach((span) => {
-      span.classList.remove("visible");
+      if (!isValid) {
+        e.preventDefault();
+      } else {
+        e.preventDefault();
+        alert('Thank you for contacting Apelele Hair Collection! Your message has been sent successfully.');
+        contactForm.reset();
+      }
     });
   }
 
+  // Enquiry Form Validation
+  const enquiryForm = document.querySelector('.enquiry-form');
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', function(e) {
+      let isValid = true;
+      const fullname = document.getElementById('fullname');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const services = document.getElementById('services');
+      const details = document.getElementById('details');
+
+      if (!fullname || fullname.value.trim() === '') isValid = false;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email.value.trim())) isValid = false;
+      if (!phone || phone.value.trim() === '') isValid = false;
+      if (!services || services.value === '') isValid = false;
+      if (!details || details.value.trim() === '') isValid = false;
+
+      if (!isValid) {
+        e.preventDefault();
+        alert('Please fill out all required fields correctly in the enquiry form[cite: 3].');
+      } else {
+        e.preventDefault();
+        alert('Thank you! Your enquiry has been submitted successfully. We will get back to you shortly.');
+        enquiryForm.reset();
+      }
+    });
+  }
+
+  function showError(input, errorElement) {
+    input.classList.add('error');
+    if (errorElement) {
+      errorElement.style.display = 'block';
+    }
+  }
+
+  function clearError(input, errorElement) {
+    input.classList.remove('error');
+    if (errorElement) {
+      errorElement.style.display = 'none';
+    }
+    }
 });
