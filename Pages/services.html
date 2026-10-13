@@ -6,8 +6,8 @@
     <title>Hair & Services | Apelele Hair Collection</title>
     <link rel="stylesheet" href="../css/Style.css">
     <script src="../javascript/lightbox.js" defer></script>
-  <script src="../javascript/search.js" defer></script>
-  <script src="../javascript/validation.js" defer></script>
+    <script src="../javascript/search.js" defer></script>
+    <script src="../javascript/validation.js" defer></script>
 </head>
 
 <body>
@@ -33,45 +33,51 @@
                 <p class="eyebrow">What we offer</p>
                 <h1>Our Services</h1>
                 <p class="page-introduction">
-                    We offer quality hair customization, hair installation and we sell premium Vietnamese hair bundles and Vietnamese weaves
+                    We offer quality hair customization, hair installation and we sell premium Vietnamese hair bundles and Vietnamese weaves[cite: 4]
                 </p>
             </div>
         </section>
 
+        <!-- Interactive Service Selection / Form validation context -->
         <section class="services-section" aria-labelledby="services-heading">
             <div class="container">
                 <h2 id="services-heading" class="section-heading">Services We Provide</h2>
 
-                <div class="services-grid">
-                    <article class="service-card">
-                        <img class="service-image" src="../images/Screenshot 2026-08-11 153457.png" alt="Describe the first service image">
+                <!-- Optional wrapper or form structure if you are collecting direct service picks via JS -->
+                <div class="services-grid" id="servicesGrid">
+                    <article class="service-card" data-service-id="bundles">
+                        <img class="service-image" src="../images/Screenshot 2026-08-11 153457.png" alt="Hair Customization preview">
                         <div class="service-content">
                             <h3>Hair Customization</h3>
-                            <p>We specialize in quality hair customization of weaves around Gqeberha. We pre-customize hairlines for natural styling up to clients' satisfaction.</p>
+                            <p>We specialize in quality hair customization of weaves around Gqeberha. We pre-customize hairlines for natural styling up to clients' satisfaction[cite: 4].</p>
+                            <a href="Enquiry.html?service=bundles" class="service-action-btn">Enquire Now</a>
                         </div>
                     </article>
 
-                    <article class="service-card">
-                        <img class="service-image" src="../images/Screenshot 2026-08-11 153537.png" alt="Describe the second service image">
+                    <article class="service-card" data-service-id="wig_construction">
+                        <img class="service-image" src="../images/Screenshot 2026-08-11 153537.png" alt="Bundles sold preview">
                         <div class="service-content">
                             <h3>Bundles sold</h3>
-                            <p>We sell quality Vietnamese bundles. Natural dark brown tone, thick strands, can be bleached to 613 Blonde. Available in lengths 12" to 30". Our clients get a gorgeous sew-in.</p>
+                            <p>We sell quality Vietnamese bundles. Natural dark brown tone, thick strands, can be bleached to 613 Blonde. Available in lengths 12" to 30". Our clients get a gorgeous sew-in[cite: 4].</p>
+                            <a href="Enquiry.html?service=wig_construction" class="service-action-btn">Enquire Now</a>
                         </div>
                     </article>
 
-                    <article class="service-card">
-                        <img class="service-image" src="../images/Screenshot 2026-08-11 153553.png" alt="Describe the third service image">
+                    <article class="service-card" data-service-id="fitting">
+                        <img class="service-image" src="../images/Screenshot 2026-08-11 153553.png" alt="Vietnamese Weaves sold preview">
                         <div class="service-content">
                             <h3>Vietnamese Weaves sold</h3>
-                            <p>Luxury Vietnamese hair sold with a variety of colours, types, inches and density. Offers beautiful natural texture that can be flat ironed straight or wet for loose beach waves.</p>
+                            <p>Luxury Vietnamese hair sold with a variety of colours, types, inches and density. Offers beautiful natural texture that can be flat ironed straight or wet for loose beach waves[cite: 4].</p>
+                            <a href="Enquiry.html?service=fitting" class="service-action-btn">Enquire Now</a>
                         </div>
                     </article>
 
-                    <article class="service-card">
-                        <img class="service-image" src="../images/boutique.png" alt="Describe the fourth service image">
+                    <article class="service-card" data-service-id="consultation">
+                        <img class="service-image" src="../images/boutique.png" alt="Boutique Services preview">
                         <div class="service-content">
                             <h3>Boutique Services</h3>
-                            <p>Custom Wig Sewing, Wig Installation, Lace Bleaching & Plucking as in pre-customized hairlines for natural styling.</p>
+                            <p>Custom Wig Sewing, Wig Installation, Lace Bleaching & Plucking as in pre-customized hairlines for natural styling[cite: 4].</p>
+                            <a href="Enquiry.html?service=consultation" class="service-action-btn">Enquire Now</a>
                         </div>
                     </article>
                 </div>
@@ -102,6 +108,7 @@
             <ul class="contact-info">
                 <li><i class="fa-solid fa-location-dot"></i><span>Algoa, Gqeberha,<br>Eastern Cape, South Africa</span></li>
                 <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/27324567891" target="_blank" rel="noopener noreferrer">032 456 7891</a></li>
+                <li><a href="https://wa.me/27324567891" target="_blank" rel="noopener noreferrer">032 456 7891</a></li>
                 <li><i class="fa-solid fa-envelope"></i><a href="mailto:apehaircollection@gmail.com">apehaircollection@gmail.com</a></li>
             </ul>
         </div>

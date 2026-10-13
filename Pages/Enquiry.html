@@ -6,8 +6,7 @@
     <title>Book / Order Enquiry - Apelele Hair Collection</title>
     <link rel="stylesheet" href="../css/Style.css">
     <script src="../javascript/lightbox.js" defer></script>
-  <script src="../javascript/search.js" defer></script>
-  <script src="../javascript/validation.js" defer></script>
+    <script src="../javascript/validation.js" defer></script>
 </head>
 <body>
 
@@ -21,7 +20,7 @@
                 <a href="../index.html">Home</a>
                 <a href="About.html">About Us</a>
                 <a href="services.html">Services</a>
-                <a href="enquiry.html">Enquiry</a>
+                <a href="Enquiry.html" aria-current="page">Enquiry</a>
                 <a href="Contact Us.html">Contact Us</a>
             </nav>
         </div>
@@ -34,16 +33,19 @@
     </section>
 
     <section class="enquiry-panel">
-        <form action="#" method="post" class="enquiry-form">
+        <!-- novalidate disables native browser validation so custom JavaScript validation takes over -->
+        <form id="enquiryForm" action="#" method="post" class="enquiry-form" novalidate>
             <div class="form-row">
                 <div class="form-group">
                     <label for="fullname">Full Name</label>
                     <input type="text" id="fullname" name="fullname" required placeholder="e.g Apelele Mayi">
+                    <span class="error-message" id="fullnameError">Full name is required.</span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required placeholder="e.g client@example.co.za">
+                    <span class="error-message" id="emailError">Please enter a valid email address.</span>
                 </div>
             </div>
 
@@ -51,6 +53,7 @@
                 <div class="form-group">
                     <label for="phone">Phone / WhatsApp Number</label>
                     <input type="tel" id="phone" name="phone" required placeholder="e.g 012 345 678">
+                    <span class="error-message" id="phoneError">Please enter a valid phone number.</span>
                 </div>
 
                 <div class="form-group">
@@ -62,12 +65,14 @@
                         <option value="fitting">Wig Installation Appointment</option>
                         <option value="consultation">Hair Quality consultation</option>
                     </select>
+                    <span class="error-message" id="servicesError">Please select a service or product option.</span>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="details">Hair Details</label>
                 <textarea id="details" name="details" rows="5" required placeholder="Specify lengths (e.g, 20, 22, 24, 30 inches), texture preference, or desired appointment date..."></textarea>
+                <span class="error-message" id="detailsError">Please specify your hair details or appointment notes.</span>
             </div>
 
             <div class="form-actions">

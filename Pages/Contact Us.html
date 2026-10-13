@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Apelele Hair Collection</title>
     <link rel="stylesheet" href="../css/Style.css">
-    <script src="../js/validation.js" defer></script>
     <script src="../javascript/lightbox.js" defer></script>
-  <script src="../javascript/search.js" defer></script>
-  
+    <script src="../javascript/validation.js" defer></script>
 </head>
 <body>
 
@@ -79,52 +77,43 @@
                 </div>
             </section>
 
-            <!-- novalidate lets our JavaScript demonstrate custom validation -->
-             <form id="contactForm" class="contact-form"novalidate>
+            <!-- novalidate disables browser built-in validation so custom JavaScript takes over -->
+            <form id="contactForm" class="contact-form" novalidate>
                 <h2>Send Us A Message</h2>
                 <div class="form-group">
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
-                    <span class="error-message" id="fnameError">
-                        Full name is required.
-                    </span>
+                    <span class="error-message" id="fnameError">First name is required.</span>
                 </div>
+                
                 <div class="form-group">
                     <label for="lname">Last Name</label>
                     <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
-                    <span class="error-message" id="lnameError">
-                        Last name is required.
-                    </span>
+                    <span class="error-message" id="lnameError">Last name is required.</span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                    <span class="error-message" id="emailError">
-                        Please enter a valid email address.
-                    </span>
+                    <span class="error-message" id="emailError">Please enter a valid email address.</span>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                    <span class="error-message" id="phoneError">
-                        Please enter a valid phone number.
-                    </span>
-
+                    <span class="error-message" id="phoneError">Please enter a valid phone number.</span>
                 </div>
+                
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
-                    <span class="error-message" id="messageError">
-                        Please enter a message.
-                    </span>
+                    <span class="error-message" id="messageError">Please enter a message.</span>
                 </div>
 
                 <div class="form-group">
                     <button type="submit">Submit</button>
-                </form>
-            </section>
+                </div>
+            </form>
         </div>
 
         <h2>Our Location</h2>
